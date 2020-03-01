@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>发布-啵啵</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <script src="js/bootstrap.js" type="application/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">啵啵</span>
+            </button>
+            <a class="navbar-brand" href="#">啵啵</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="想看看什么呢">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" th:if="${session.user!=null}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="${session.user.getName()}"><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">消息中心</a></li>
+                        <li><a href="#">个人资料</a></li>
+                        <li><a href="#">退出登录</a></li>
+                    </ul>
+                </li>
+                <li th:if="${session.user==null}">
+                    <a href="https://github.com/login/oauth/authorize?client_id=67e4193e4771b651399e&redirect_uri=http://localhost:8887/callback&scope=user&state=1">登录</a></li>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class = "row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12"></div>
+                <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>举手手 提问问</h2>
+                <hr>
+            <form action="">
+                <div class="form-group">
+                    <label for="title">我想问</label>
+                    <input type="text" class="form-control" id="title" name = "title" placeholder="我的问题... ...">
+                </div>
+                <div class="form-group">
+                    <label for="title">我还想说</label>
+                     <textarea name="description" id="description" class="form-control" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                     <label for="title">添加标签</label>
+                     <input type="text" class="form-control" id="tag" name = "tag" placeholder="输入标签以逗号隔开">
+                </div>
+
+                <button type="submmit" class="btn btn-success">告诉大家</button>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <h3>举手手指南</h3>
+            我想问:请用简练的语言表达问题,不超过25个字
+            我还想说:详细说明问题的内容补充相关细节
+            选择标签:选择一个或多个适合的标签不同的标签用逗号隔开,每个标签不超过10个字
+        </div>
+    </div>
+</nav>
+</body>
+</html>
