@@ -30,7 +30,7 @@ body{
     font-size: 12px;
 }
 .community-menu-text{
-    float: right;
+    margin-bottom: 20px;
 }
 .jumbotron{
     margin : 50px;
@@ -38,16 +38,17 @@ body{
 .comment{
     margin: 10px 0;
 }
-。comment-btn{
+.comment-btn{
     float: right;
     margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 .comment-sp{
     margin-top:0;
 }
 .comments{
     margin-bottom: 15px;
-    border-bottom: 1px solid #adadad;
+    border-bottom: 1px solid #f0f0f0;
     padding-bottom: 7px;
 }
 .menu{
